@@ -13084,7 +13084,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="About-the-Project">About the Project<a class="anchor-link" href="#About-the-Project">&#182;</a></h2><p>In this project, we will employ several supervised algorithms of your choice to accurately model individuals' income using data collected from the 1994 U.S. Census. You will then choose the best candidate algorithm from preliminary results and further optimize this algorithm to best model the data. Your goal with this implementation is to construct a model that accurately predicts whether an individual makes more than $50,000. This sort of task can arise in a non-profit setting, where organizations survive on donations.  Understanding an individual's income can help a non-profit better understand how large of a donation to request, or whether or not they should reach out to begin with.  While it can be difficult to determine an individual's general income bracket directly from public sources, we can (as we will see) infer this value from other publically available features.</p>
+<h2 id="About-the-Project">About the Project<a class="anchor-link" href="#About-the-Project">&#182;</a></h2><p>In this project, we will employ several supervised algorithms to accurately model individuals' income using data collected from the 1994 U.S. Census. We want to find the best candidate algorithm from preliminary results and further optimize this algorithm to best model the data. We will be developing a model that accurately predicts whether an individual makes more than $50,000. This sort of task can arise in a non-profit setting, where organizations survive on donations.  Understanding an individual's income can help a non-profit better understand how large of a donation to request, or whether or not they should reach out to begin with.  While it can be difficult to determine an individual's general income bracket directly from public sources, we can (as we will see) infer this value from other publically available features.</p>
 <p>The dataset for this project originates from the <a href="https://archive.ics.uci.edu/ml/datasets/Census+Income">UCI Machine Learning Repository</a>. The datset was donated by Ron Kohavi and Barry Becker, after being published in the article _"Scaling Up the Accuracy of Naive-Bayes Classifiers: A Decision-Tree Hybrid".
 The data we investigate here consists of small changes to the original dataset, such as removing the <code>'fnlwgt'</code> feature and records with missing or ill-formatted entries.</p>
 
@@ -13094,8 +13094,7 @@ The data we investigate here consists of small changes to the original dataset, 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exploring-the-Data">Exploring the Data<a class="anchor-link" href="#Exploring-the-Data">&#182;</a></h2><p>Run the code cell below to load necessary Python libraries and load the census data. Note that the last column from this dataset, <code>'income'</code>, will be our target label (whether an individual makes more than, or at most, $50,000 annually). All other columns are features about each individual in the census database.</p>
-
+<h2 id="Exploring-the-Data">Exploring the Data<a class="anchor-link" href="#Exploring-the-Data">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13752,17 +13751,7 @@ Testing set has 9045 samples.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Supervised-Learning-Models">Supervised Learning Models<a class="anchor-link" href="#Supervised-Learning-Models">&#182;</a></h3><p><strong>The following are some of the supervised learning models that are currently available in</strong> <a href="http://scikit-learn.org/stable/supervised_learning.html"><code>scikit-learn</code></a> <strong>that you may choose from:</strong></p>
-<ul>
-<li>Gaussian Naive Bayes (GaussianNB)</li>
-<li>Decision Trees</li>
-<li>Ensemble Methods (Bagging, AdaBoost, Random Forest, Gradient Boosting)</li>
-<li>K-Nearest Neighbors (KNeighbors)</li>
-<li>Stochastic Gradient Descent Classifier (SGDC)</li>
-<li>Support Vector Machines (SVM)</li>
-<li>Logistic Regression</li>
-</ul>
-
+<h3 id="Supervised-Learning-Models">Supervised Learning Models<a class="anchor-link" href="#Supervised-Learning-Models">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13780,10 +13769,10 @@ Testing set has 9045 samples.
 </ul>
 <ul>
 <li><p><strong>Gaussian Naive Bayes</strong>
-  This method is used for the classification purposes.Naive Bayes is a classification algorithm for binary (two-class) and multi-class classification problems. The technique is easiest to understand when described using binary or categorical input values.The Naive Bayes algorithm is an intuitive method that uses the probabilities of each attribute belonging to each class to make a prediction. It is the supervised learning approach you would come up with if you wanted to model a predictive modeling problem probabilistically.</p>
+  This method is used for the classification purposes.Naive Bayes is a classification algorithm for binary (two-class) and multi-class classification problems. The technique is easiest to understand when described using binary or categorical input values.The Naive Bayes algorithm is an intuitive method that uses the probabilities of each attribute belonging to each class to make a prediction. It is the supervised learning approach we would come up with if we wanted to model a predictive modeling problem probabilistically.</p>
 <p><strong>- Application</strong>: It is widely used for classifying content/text in a document.</p>
 <p><strong>- Strengths/Advantages:</strong> An advantage of naive Bayes is that it only requires a small number of training data to estimate the parameters necessary for classification.</p>
-<p><strong>- Weaknesses:</strong> A disadvantage with Naive-Bayes is that if you have no occurrences of a class label and a certain attribute value together (e.g. class="nice", shape="sphere") then the frequency-based probability estimate will be zero. Given Naive-Bayes' conditional independence assumption, when all the probabilities are multiplied you will get zero and this will affect the posterior probability estimate.</p>
+<p><strong>- Weaknesses:</strong> A disadvantage with Naive-Bayes is that if there are no occurrences of a class label and a certain attribute value together (e.g. class="nice", shape="sphere") then the frequency-based probability estimate will be zero. Given Naive-Bayes' conditional independence assumption, when all the probabilities are multiplied we will get zero and this will affect the posterior probability estimate.</p>
 <p><strong>- Reason of Using this model:</strong>This model will be a good way to start as we have large dataset with very few features as compared to the data.</p>
 </li>
 </ul>
@@ -13811,8 +13800,7 @@ Testing set has 9045 samples.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Creating-a-Training-and-Predicting-Pipeline">Creating a Training and Predicting Pipeline<a class="anchor-link" href="#Creating-a-Training-and-Predicting-Pipeline">&#182;</a></h3><p>To properly evaluate the performance of each model you've chosen, it's important that you create a training and predicting pipeline that allows you to quickly and effectively train models using various sizes of training data and perform predictions on the testing data. Your implementation here will be used in the following section.</p>
-
+<h3 id="Creating-a-Training-and-Predicting-Pipeline">Creating a Training and Predicting Pipeline<a class="anchor-link" href="#Creating-a-Training-and-Predicting-Pipeline">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13979,8 +13967,7 @@ GradientBoostingClassifier trained on 36177 samples.
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Improving-Results">Improving Results<a class="anchor-link" href="#Improving-Results">&#182;</a></h2><p>In this final section, you will choose from the three supervised learning models the <em>best</em> model to use on the student data. You will then perform a grid search optimization for the model over the entire training set (<code>X_train</code> and <code>y_train</code>) by tuning at least one parameter to improve upon the untuned model's F-score.</p>
-
+<h2 id="Improving-Results">Improving Results<a class="anchor-link" href="#Improving-Results">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14053,8 +14040,7 @@ GradientBoostingClassifier trained on 36177 samples.
 <span class="c1"># Initialize the classifier</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-<span class="c1"># Create the parameters list you wish to tune, using a dictionary if needed.</span>
-<span class="c1"># parameters = {&#39;parameter_1&#39;: [value1, value2], &#39;parameter_2&#39;: [value1, value2]}</span>
+<span class="c1"># Tuning Parameters</span>
 <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="s1">&#39;exponential&#39;</span><span class="p">],</span>
               <span class="s1">&#39;max_depth&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
              <span class="p">}</span>
@@ -14276,7 +14262,7 @@ Final F-score on the testing data: 0.7504
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Feature-Selection">Feature Selection<a class="anchor-link" href="#Feature-Selection">&#182;</a></h3><p>How does a model perform if we only use a subset of all the available features in the data? With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of <strong>all</strong> features present in the data. This hints that we can attempt to <em>reduce the feature space</em> and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set <em>with only the top five important features</em>.</p>
+<h3 id="Feature-Selection">Feature Selection<a class="anchor-link" href="#Feature-Selection">&#182;</a></h3><p>From the visualization above, we see that the top five most important features contribute more than half of the importance of <strong>all</strong> features present in the data. This hints that we can attempt to <em>reduce the feature space</em> and simplify the information required for the model to learn.</p>
 
 </div>
 </div>
